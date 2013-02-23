@@ -363,6 +363,26 @@ Now that you've got your permissions defined, you can skip along to
 :ref:`the section on checking permissions <checking-permissions>`
 using the ACL component.
 
+Defining Permissions: Cake's PhpAcl Adapter
+===========================================
+
+Cake's PhpAcl adapter stores permissions in a simple PHP file. It works well
+with the `AuthComponent` and `actions` authorization. To enable the PhpAcl
+Adapter adapt your core.php file:
+
+::
+
+    // Change these lines:
+    Configure::write('Acl.classname', 'DbAcl');
+    Configure::write('Acl.database', 'default');
+    
+    // To look like this:
+    Configure::write('Acl.classname', 'PhpAcl');
+    //Configure::write('Acl.database', 'default');
+
+ARO/ACO permissions are specified in **/app/Config/acl.php**.
+
+.. todo:: finish 
 
 Defining Permissions: Cake's Database ACL
 =========================================
